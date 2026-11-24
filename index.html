@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>maya论坛powered by Discuz!_技术社区_官方视频门户与创作者内容生态</title>
+<meta name="description" content="maya论坛powered by Discuz! 官方网站视频门户：深耕技术社区与内容生态，汇聚原创创作者、高清教程与行业观察，打造值得信赖的垂直领域视频平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2c4c'/%3E%3Cpath d='M16 44V20h6l10 14 10-14h6v24h-4V27l-8 11h-8l-8-11v17z' fill='%2359d0ff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mfx-navy:#101b2e;
+  --mfx-navy2:#17263d;
+  --mfx-ink:#1f2b3d;
+  --mfx-muted:#5c6b80;
+  --mfx-line:#dfe6ef;
+  --mfx-bg:#f5f8fc;
+  --mfx-card:#ffffff;
+  --mfx-cyan:#18c2d9;
+  --mfx-cyan-d:#0e94a8;
+  --mfx-blue:#2b6ff2;
+  --mfx-glow:#59d0ff;
+  --mfx-warm:#ff9f43;
+  --mfx-radius:14px;
+  --mfx-shadow:0 10px 30px rgba(16,27,46,.09);
+  --mfx-head-h:0px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{
+  margin:0;font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--mfx-ink);background:var(--mfx-bg);line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:800;letter-spacing:.2px}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.mfx-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.mfx-sticky-top{position:sticky;top:0;z-index:80}
+
+/* 公告条 */
+.mfx-announce{background:linear-gradient(90deg,var(--mfx-navy),#1d3a63 55%,var(--mfx-cyan-d));color:#eaf6ff;font-size:13.5px}
+.mfx-announce-inner{display:flex;align-items:center;gap:12px;padding:9px 0;overflow:hidden}
+.mfx-announce-tag{flex:0 0 auto;background:rgba(89,208,255,.18);border:1px solid rgba(89,208,255,.55);color:#9fe8ff;border-radius:6px;padding:1px 9px;font-size:12px;letter-spacing:1px}
+.mfx-announce-track{flex:1 1 auto;position:relative;overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.mfx-announce-track span{display:inline-block;padding-right:60px;animation:mfx-marquee 26s linear infinite}
+.mfx-announce-track span b{color:#ffd28a;font-weight:600}
+@keyframes mfx-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mfx-announce-link{flex:0 0 auto;color:#9fe8ff;font-size:12.5px;border-bottom:1px dashed rgba(159,232,255,.6)}
+
+/* 页头 */
+.mfx-header{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--mfx-line)}
+.mfx-header-inner{display:flex;align-items:center;gap:22px;height:72px}
+.mfx-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.mfx-brand-mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,var(--mfx-navy),var(--mfx-cyan-d));display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px;flex:0 0 auto;box-shadow:0 6px 14px rgba(24,194,217,.32)}
+.mfx-brand-text{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.mfx-brand-text b{font-size:16.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mfx-brand-text small{font-size:10.5px;letter-spacing:2.4px;color:var(--mfx-muted);text-transform:uppercase}
+.mfx-nav{display:flex;gap:2px;margin-left:6px;flex-wrap:wrap}
+.mfx-nav a{padding:8px 12px;border-radius:8px;font-size:14.5px;color:#33445c;transition:.18s}
+.mfx-nav a:hover{background:#eaf4fb;color:var(--mfx-cyan-d)}
+.mfx-header-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+.mfx-search{display:flex;align-items:center;gap:8px;background:#eef3f9;border:1px solid transparent;border-radius:10px;padding:6px 10px;transition:.2s}
+.mfx-search:focus-within{border-color:var(--mfx-cyan);background:#fff;box-shadow:0 0 0 3px rgba(24,194,217,.16)}
+.mfx-search input{border:none;background:transparent;outline:none;font-size:14px;width:150px;color:var(--mfx-ink)}
+.mfx-search button{font-size:13px;color:var(--mfx-cyan-d);font-weight:700}
+.mfx-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:10px;padding:10px 18px;font-size:14px;font-weight:700;transition:.2s;white-space:nowrap}
+.mfx-btn-primary{background:linear-gradient(120deg,var(--mfx-cyan-d),var(--mfx-blue));color:#fff;box-shadow:0 8px 18px rgba(43,111,242,.22)}
+.mfx-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(43,111,242,.3)}
+.mfx-btn-ghost{border:1px solid rgba(255,255,255,.5);color:#eaf6ff;background:rgba(255,255,255,.08)}
+.mfx-btn-ghost:hover{background:rgba(255,255,255,.18)}
+.mfx-btn-line{border:1px solid var(--mfx-line);background:#fff;color:var(--mfx-ink)}
+.mfx-btn-line:hover{border-color:var(--mfx-cyan);color:var(--mfx-cyan-d)}
+.mfx-menu-toggle{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--mfx-line);background:#fff;font-size:19px;line-height:1}
+
+/* 首屏 */
+.mfx-hero{position:relative;background:radial-gradient(1100px 520px at 82% -12%,rgba(89,208,255,.22),transparent 62%),linear-gradient(160deg,var(--mfx-navy) 0%,#152845 58%,#1b3b5f 100%);color:#eef6ff;overflow:hidden}
+.mfx-hero::after{content:"";position:absolute;inset:auto 0 0 0;height:110px;background:linear-gradient(180deg,transparent,rgba(16,27,46,.55))}
+.mfx-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:44px;align-items:center;padding:66px 0 74px}
+.mfx-hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.6px;color:#9fe8ff;border:1px solid rgba(89,208,255,.45);border-radius:999px;padding:4px 14px;margin-bottom:20px}
+.mfx-hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--mfx-glow);box-shadow:0 0 0 4px rgba(89,208,255,.2)}
+.mfx-hero h1{font-size:clamp(28px,3.5vw,44px);letter-spacing:.4px}
+.mfx-hero h1 em{font-style:normal;color:#8ce4ff;display:block;font-size:.55em;font-weight:600;letter-spacing:1px;margin-top:12px;color:#bcd6ec}
+.mfx-hero-lead{margin-top:18px;font-size:15.5px;color:#c8dbee;max-width:560px}
+.mfx-hero-desc{margin-top:14px;font-size:14px;color:#a9c3dc;max-width:580px}
+.mfx-hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.mfx-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);max-width:560px}
+.mfx-hero-stats b{display:block;font-size:26px;color:#8ce4ff;font-family:"DIN Alternate","Segoe UI",sans-serif}
+.mfx-hero-stats span{font-size:12.5px;color:#a9c3dc}
+.mfx-hero-visual{position:relative}
+.mfx-hero-visual figure{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.14)}
+.mfx-hero-visual figcaption{position:absolute;left:16px;bottom:14px;background:rgba(8,16,28,.72);backdrop-filter:blur(6px);color:#dcf3ff;font-size:12.5px;border-radius:8px;padding:5px 12px}
+.mfx-play-badge{position:absolute;top:14px;right:14px;background:rgba(89,208,255,.94);color:#062a36;font-size:12px;font-weight:800;border-radius:8px;padding:5px 11px;letter-spacing:.5px}
+.mfx-hero-float{position:absolute;left:-18px;bottom:-22px;background:#fff;color:var(--mfx-ink);border-radius:14px;padding:12px 16px;box-shadow:var(--mfx-shadow);display:flex;gap:12px;align-items:center;max-width:76%}
+.mfx-hero-float b{font-size:13.5px;display:block}
+.mfx-hero-float small{color:var(--mfx-muted);font-size:11.5px}
+.mfx-hero-float .mfx-dot-live{width:9px;height:9px;border-radius:50%;background:#12c46a;box-shadow:0 0 0 4px rgba(18,196,106,.18)}
+
+/* 通用 section */
+.mfx-section{padding:58px 0}
+.mfx-section.alt{background:#fff;border-top:1px solid var(--mfx-line);border-bottom:1px solid var(--mfx-line)}
+.mfx-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.mfx-sec-head h2{font-size:clamp(21px,2.2vw,27px);position:relative;padding-left:16px}
+.mfx-sec-head h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--mfx-cyan),var(--mfx-blue))}
+.mfx-sec-head p{font-size:14px;color:var(--mfx-muted);max-width:640px;margin-top:6px;padding-left:16px}
+.mfx-sec-more{font-size:13.5px;color:var(--mfx-cyan-d);font-weight:700;border-bottom:1px dashed rgba(14,148,168,.4);padding-bottom:2px}
+
+/* 重点内容 */
+.mfx-focus{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);gap:26px}
+.mfx-focus-card{background:#fff;border-radius:var(--mfx-radius);overflow:hidden;border:1px solid var(--mfx-line);box-shadow:var(--mfx-shadow);transition:.24s;display:flex;flex-direction:column}
+.mfx-focus-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(16,27,46,.14)}
+.mfx-focus-card figure{margin:0;position:relative;aspect-ratio:16/9;overflow:hidden}
+.mfx-focus-card figure img{width:100%;height:100%;object-fit:cover}
+.mfx-focus-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.mfx-tagrow{display:flex;flex-wrap:wrap;gap:6px}
+.mfx-tag{font-size:11.5px;color:var(--mfx-cyan-d);background:#e7f7fa;border-radius:6px;padding:2px 9px;font-weight:600}
+.mfx-tag.warm{color:#b8650c;background:#fff1e0}
+.mfx-focus-body h3{font-size:18.5px}
+.mfx-focus-body p{font-size:13.8px;color:var(--mfx-muted)}
+.mfx-meta{display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--mfx-muted);flex-wrap:wrap;margin-top:auto;padding-top:10px;border-top:1px dashed var(--mfx-line)}
+.mfx-act{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--mfx-muted);padding:4px 8px;border-radius:8px;transition:.18s}
+.mfx-act:hover{background:#eef7fb;color:var(--mfx-cyan-d)}
+.mfx-act.on{color:#e0457b}
+.mfx-act svg{width:15px;height:15px;fill:currentColor}
+
+/* 视频条目列表 */
+.mfx-vlist{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--mfx-line);border-radius:var(--mfx-radius);overflow:hidden}
+.mfx-vitem{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:14px;padding:16px 18px;border-bottom:1px solid #edf2f8;align-items:start;transition:.18s}
+.mfx-vitem:last-child{border-bottom:none}
+.mfx-vitem:hover{background:#f7fbfe}
+.mfx-vnum{font-family:"DIN Alternate",monospace;font-weight:800;font-size:17px;color:#b9c8d9;padding-top:2px}
+.mfx-vitem:nth-child(-n+3) .mfx-vnum{color:var(--mfx-cyan-d)}
+.mfx-vtitle{font-size:15px;font-weight:700;line-height:1.5}
+.mfx-vitem p{font-size:13px;color:var(--mfx-muted);margin-top:4px}
+.mfx-vmeta{font-size:12px;color:#8595a8;margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+.mfx-vside{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.mfx-vside .mfx-tag{white-space:nowrap}
+.mfx-vstat{font-size:11.5px;color:#8595a8}
+
+/* 专题 */
+.mfx-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.mfx-topic{background:#fff;border:1px solid var(--mfx-line);border-radius:var(--mfx-radius);padding:22px;display:flex;flex-direction:column;gap:12px;transition:.22s}
+.mfx-topic:hover{transform:translateY(-3px);border-color:#bfe6ee;box-shadow:var(--mfx-shadow)}
+.mfx-topic-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mfx-topic-head h3{font-size:16.5px}
+.mfx-status{font-size:11px;border-radius:999px;padding:2px 10px;font-weight:700;white-space:nowrap}
+.mfx-status.live{color:#0a8f52;background:#e3f8ee}
+.mfx-status.soon{color:#a35a00;background:#fff2df}
+.mfx-status.done{color:#5a6b80;background:#eef2f7}
+.mfx-topic p{font-size:13.3px;color:var(--mfx-muted)}
+.mfx-topic ul{display:flex;flex-direction:column;gap:8px;font-size:13.2px}
+.mfx-topic ul li{padding-left:16px;position:relative;color:#33445c}
+.mfx-topic ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:2px;background:var(--mfx-cyan)}
+
+/* 关键词解析长文 */
+.mfx-analytic{background:#fff;border:1px solid var(--mfx-line);border-radius:18px;padding:32px clamp(20px,3vw,42px);box-shadow:var(--mfx-shadow)}
+.mfx-analytic h3{font-size:17.5px;margin-top:26px;margin-bottom:8px;color:var(--mfx-navy);display:flex;align-items:center;gap:10px}
+.mfx-analytic h3:first-child{margin-top:0}
+.mfx-analytic h3::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--mfx-blue);flex:0 0 auto}
+.mfx-analytic p{font-size:14.4px;color:#33445c;margin-top:6px}
+.mfx-analytic p + p{margin-top:12px}
+.mfx-analytic .mfx-analytic-lead{font-size:15px;color:var(--mfx-ink);background:#f3f9fd;border-left:4px solid var(--mfx-cyan);padding:14px 18px;border-radius:0 10px 10px 0}
+
+/* 作者矩阵 */
+.mfx-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.mfx-author{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;background:#fff;border:1px solid var(--mfx-line);border-radius:var(--mfx-radius);padding:18px;transition:.2s}
+.mfx-author:hover{border-color:#bfe6ee;box-shadow:0 12px 26px rgba(16,27,46,.08)}
+.mfx-avatar{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;flex:0 0 auto;letter-spacing:1px}
+.mfx-author h3{font-size:15.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mfx-author h3 button{font-size:11.5px;color:var(--mfx-cyan-d);font-weight:600;border:1px solid #cbe9ef;border-radius:6px;padding:0 7px;line-height:1.7}
+.mfx-author .mfx-field{font-size:12.3px;color:var(--mfx-cyan-d);font-weight:600;margin-top:2px}
+.mfx-author p{font-size:13px;color:var(--mfx-muted);margin-top:6px}
+.mfx-author .mfx-anums{font-size:12px;color:#8595a8;margin-top:8px;display:flex;gap:14px}
+
+/* 评论 */
+.mfx-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mfx-comment{background:#fff;border:1px solid var(--mfx-line);border-radius:var(--mfx-radius);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.mfx-comment.top{border-left:4px solid var(--mfx-cyan)}
+.mfx-comment-head{display:flex;align-items:center;gap:10px;font-size:13px}
+.mfx-comment-head .mfx-avatar{width:34px;height:34px;border-radius:10px;font-size:13px}
+.mfx-comment-head b{font-size:13.5px}
+.mfx-comment-head span{color:#8595a8;font-size:11.5px}
+.mfx-comment p{font-size:13.3px;color:#33445c}
+.mfx-stars{color:#f5a623;font-size:12.5px;letter-spacing:1px}
+
+/* 动态 + 合作 + FAQ */
+.mfx-two-col{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:26px;align-items:start}
+.mfx-news{background:#fff;border:1px solid var(--mfx-line);border-radius:var(--mfx-radius);overflow:hidden}
+.mfx-news li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding:15px 18px;border-bottom:1px solid #edf2f8;align-items:start}
+.mfx-news li:last-child{border-bottom:none}
+.mfx-news time{font-size:12px;color:#8595a8;font-family:"DIN Alternate",monospace;padding-top:2px;white-space:nowrap}
+.mfx-news b{font-size:14px;display:block}
+.mfx-news p{font-size:12.8px;color:var(--mfx-muted);margin-top:3px}
+.mfx-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mfx-partner{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--mfx-line);border-radius:12px;padding:12px 14px;font-size:13px;font-weight:600;transition:.18s}
+.mfx-partner:hover{border-color:#bfe6ee;background:#f7fbfe}
+.mfx-partner i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-style:normal;font-weight:800;font-size:13px;flex:0 0 auto}
+.mfx-faq{display:flex;flex-direction:column;gap:10px}
+.mfx-faq details{background:#fff;border:1px solid var(--mfx-line);border-radius:12px;padding:0;transition:.18s;overflow:hidden}
+.mfx-faq details[open]{border-color:#bfe6ee;box-shadow:0 8px 20px rgba(16,27,46,.06)}
+.mfx-faq summary{list-style:none;cursor:pointer;padding:14px 18px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mfx-faq summary::-webkit-details-marker{display:none}
+.mfx-faq summary::after{content:"+";font-size:18px;color:var(--mfx-cyan-d);font-weight:700;transition:.2s}
+.mfx-faq details[open] summary::after{content:"–"}
+.mfx-faq .mfx-faq-body{padding:0 18px 16px;font-size:13.3px;color:var(--mfx-muted)}
+
+/* 投稿 */
+.mfx-submit{background:linear-gradient(135deg,#0f2540,#1b3d63 60%,#0e7c8f);color:#eaf6ff;border-radius:20px;padding:36px clamp(22px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:center;box-shadow:0 22px 50px rgba(16,27,46,.22)}
+.mfx-submit h2{font-size:clamp(20px,2.2vw,26px);padding:0}
+.mfx-submit h2::before{display:none}
+.mfx-submit p{font-size:14px;color:#bfd7ea;margin-top:10px}
+.mfx-submit-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.mfx-submit-list{display:flex;flex-direction:column;gap:10px;font-size:13.3px;color:#cfe5f4}
+.mfx-submit-list li{padding-left:20px;position:relative}
+.mfx-submit-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--mfx-glow);font-weight:800}
+
+/* 页脚 */
+.mfx-footer{background:var(--mfx-navy);color:#b7cbdd;padding:52px 0 0;font-size:13.5px}
+.mfx-footer-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2.4fr));gap:30px;padding-bottom:36px}
+.mfx-footer h4{font-size:14.5px;color:#eaf6ff;margin-bottom:12px}
+.mfx-footer p{color:#9db4c8;font-size:13px;line-height:1.85}
+.mfx-footer ul{display:flex;flex-direction:column;gap:8px;font-size:13px}
+.mfx-footer ul a{color:#a9c3d9}
+.mfx-footer ul a:hover{color:#8ce4ff}
+.mfx-footer .mfx-brand-mark{margin-bottom:12px;background:linear-gradient(140deg,#1d3a63,var(--mfx-cyan-d))}
+.mfx-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.3px;color:#8599ad}
+
+/* 回到顶部 & toast & 弹层 */
+.mfx-to-top{position:fixed;right:20px;bottom:26px;width:44px;height:44px;border-radius:12px;background:var(--mfx-navy);color:#8ce4ff;display:grid;place-items:center;font-size:18px;box-shadow:0 12px 26px rgba(16,27,46,.3);opacity:0;pointer-events:none;transition:.25s;z-index:70}
+.mfx-to-top.show{opacity:1;pointer-events:auto}
+.mfx-to-top:hover{transform:translateY(-3px)}
+.mfx-toast{position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);background:rgba(16,27,46,.94);color:#eaf6ff;font-size:13.5px;padding:11px 22px;border-radius:10px;opacity:0;pointer-events:none;transition:.28s;z-index:120;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.mfx-toast.show{opacity:1;transform:translate(-50%,0)}
+.mfx-modal{position:fixed;inset:0;background:rgba(10,20,34,.62);backdrop-filter:blur(3px);display:none;place-items:center;padding:20px;z-index:110}
+.mfx-modal.show{display:grid}
+.mfx-modal-box{background:#fff;border-radius:18px;max-width:560px;width:100%;padding:26px clamp(18px,3vw,30px);box-shadow:0 30px 70px rgba(0,0,0,.35);max-height:86vh;overflow:auto;position:relative}
+.mfx-modal-box h3{font-size:18px;margin-bottom:8px}
+.mfx-modal-box p{font-size:13.6px;color:var(--mfx-muted);margin-top:8px}
+.mfx-modal-close{position:absolute;top:12px;right:14px;font-size:20px;color:#8595a8;width:32px;height:32px;border-radius:8px}
+.mfx-modal-close:hover{background:#eef3f9;color:var(--mfx-ink)}
+.mfx-form-field{margin-top:12px}
+.mfx-form-field label{display:block;font-size:12.8px;font-weight:700;margin-bottom:5px}
+.mfx-form-field input,.mfx-form-field textarea{width:100%;border:1px solid var(--mfx-line);border-radius:10px;padding:9px 12px;font-size:13.5px;font-family:inherit;outline:none;background:#fbfdff;color:var(--mfx-ink)}
+.mfx-form-field input:focus,.mfx-form-field textarea:focus{border-color:var(--mfx-cyan);box-shadow:0 0 0 3px rgba(24,194,217,.15)}
+.mfx-modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+
+/* 搜索结果提示 */
+.mfx-search-hint{display:none;font-size:13px;color:var(--mfx-cyan-d);background:#e9f8fb;border:1px solid #c7ebf2;border-radius:10px;padding:9px 14px;margin-bottom:18px}
+.mfx-search-hint.show{display:block}
+.mfx-filter-empty{display:none;text-align:center;color:var(--mfx-muted);font-size:14px;padding:22px;background:#fff;border:1px dashed var(--mfx-line);border-radius:12px}
+.mfx-filter-empty.show{display:block}
+
+@media (max-width:1024px){
+  .mfx-hero-grid{grid-template-columns:1fr;gap:34px;padding:46px 0 58px}
+  .mfx-hero-visual{order:-1}
+  .mfx-focus{grid-template-columns:1fr}
+  .mfx-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mfx-two-col{grid-template-columns:1fr}
+  .mfx-submit{grid-template-columns:1fr}
+  .mfx-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .mfx-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--mfx-line);padding:10px 20px 16px;box-shadow:0 18px 30px rgba(16,27,46,.12);flex-direction:column}
+  .mfx-nav.open{display:flex}
+  .mfx-nav a{padding:11px 12px;border-radius:8px}
+  .mfx-menu-toggle{display:grid;place-items:center;order:2}
+  .mfx-header-inner{position:relative}
+  .mfx-search input{width:120px}
+  .mfx-header-actions .mfx-btn-line{display:none}
+}
+@media (max-width:720px){
+  html{scroll-padding-top:150px}
+  .mfx-section{padding:40px 0}
+  .mfx-authors,.mfx-comments{grid-template-columns:1fr}
+  .mfx-topic-grid{grid-template-columns:1fr}
+  .mfx-hero-stats{grid-template-columns:1fr 1fr}
+  .mfx-vitem{grid-template-columns:30px minmax(0,1fr)}
+  .mfx-vside{grid-column:2;flex-direction:row;align-items:center;justify-content:flex-start;flex-wrap:wrap}
+  .mfx-footer-grid{grid-template-columns:1fr}
+  .mfx-announce-link{display:none}
+  .mfx-hero-float{position:static;margin-top:14px;max-width:none}
+  .mfx-partners{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="mfx-sticky-top">
+  <div class="mfx-announce">
+    <div class="mfx-wrap mfx-announce-inner">
+      <span class="mfx-announce-tag">官方公告</span>
+      <div class="mfx-announce-track">
+        <span>「创作者扶持计划 2026 冬季批」开放报名，新增 40 个高清影像制作名额 &nbsp;·&nbsp; <b>《maya论坛powered by Discuz! 技术社区年度影像志》</b>正式上线，含 12 支原创纪录短片 &nbsp;·&nbsp; 社区投稿通道已支持批量上传与版本回滚 &nbsp;·&nbsp; 12 月「城市技术现场」线下分享会开放免费预约 &nbsp;·&nbsp; 官方周边设计投票进入终选阶段</span>
+      </div>
+      <a class="mfx-announce-link" href="#mfx-submit">查看详情</a>
+    </div>
+  </div>
+
+  <header class="mfx-header">
+    <div class="mfx-wrap mfx-header-inner">
+      <a class="mfx-brand" href="#mfx-top" aria-label="maya论坛powered by Discuz! 官方视频门户首页">
+        <span class="mfx-brand-mark" aria-hidden="true">M</span>
+        <span class="mfx-brand-text">
+          <b>maya论坛powered by Discuz!</b>
+          <small>Official Video Portal</small>
+        </span>
+      </a>
+      <nav class="mfx-nav" id="mfx-nav" aria-label="主导航">
+        <a href="#mfx-focus">焦点内容</a>
+        <a href="#mfx-topics">专题企划</a>
+        <a href="#mfx-analyze">社区解析</a>
+        <a href="#mfx-authors">创作者</a>
+        <a href="#mfx-comments">用户口碑</a>
+        <a href="#mfx-help">帮助中心</a>
+      </nav>
+      <div class="mfx-header-actions">
+        <div class="mfx-search" role="search">
+          <input type="search" id="mfx-search-input" placeholder="搜索教程 / 作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="mfx-search-btn">搜索</button>
+        </div>
+        <a class="mfx-btn mfx-btn-line" href="#mfx-submit">投稿</a>
+        <a class="mfx-btn mfx-btn-primary" href="#mfx-focus">进入首页</a>
+        <button class="mfx-menu-toggle" id="mfx-menu-toggle" aria-label="展开导航菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="mfx-top">
+
+  <!-- S2 品牌首屏 -->
+  <section class="mfx-hero" aria-labelledby="mfx-hero-title">
+    <div class="mfx-wrap mfx-hero-grid">
+      <div class="mfx-hero-copy">
+        <span class="mfx-hero-kicker"><i aria-hidden="true"></i>企业级品牌官网 · 官方发布</span>
+        <h1 id="mfx-hero-title">maya论坛powered by Discuz!<em>技术社区的官方视频门户与内容生态</em></h1>
+        <p class="mfx-hero-lead">作为深耕技术社区与论坛文化的视频品牌，我们把真实的讨论、可复用的经验与持续运营的社区活力，转化为可被观看、收藏与传播的高清影像。</p>
+        <p class="mfx-hero-desc">这里是 maya论坛powered by Discuz! 官方网站的视频板块：原创纪录、深度教程、创作者访谈与行业观察同步更新。我们坚持正版、高清、专业的内容标准，与创作者共同搭建值得信赖的垂直领域内容生态，陪伴每一位技术同好成长。</p>
+        <div class="mfx-hero-cta">
+          <a class="mfx-btn mfx-btn-primary" href="#mfx-focus">观看焦点内容</a>
+          <a class="mfx-btn mfx-btn-ghost" href="#mfx-authors">认识创作者</a>
+          <a class="mfx-btn mfx-btn-ghost" href="#mfx-submit">上传作品</a>
+        </div>
+        <div class="mfx-hero-stats">
+          <div><b data-count="1286">0</b><span>原创高清视频（累计）</span></div>
+          <div><b data-count="94">0</b><span>签约与认证创作者</span></div>
+          <div><b data-count="52">0</b><span>城市社区影像站点</span></div>
+        </div>
+      </div>
+      <div class="mfx-hero-visual">
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 560'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230c1a2c'/%3E%3Cstop offset='1' stop-color='%231b3f66'/%3E%3C/linearGradient%3E%3ClinearGradient id='panel' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2318c2d9'/%3E%3Cstop offset='1' stop-color='%232b6ff2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='560' fill='url(%23sky)'/%3E%3Cg opacity='.5' fill='%2359d0ff'%3E%3Ccircle cx='120' cy='90' r='3'/%3E%3Ccircle cx='240' cy='60' r='2'/%3E%3Ccircle cx='700' cy='80' r='2.5'/%3E%3Ccircle cx='820' cy='150' r='2'/%3E%3Ccircle cx='520' cy='48' r='2'/%3E%3C/g%3E%3Cg%3E%3Crect x='90' y='140' width='470' height='300' rx='18' fill='%23f3fbff' opacity='.09' stroke='%2359d0ff' stroke-opacity='.5'/%3E%3Crect x='112' y='164' width='426' height='252' rx='10' fill='%230b1b2d'/%3E%3Cpath d='M112 300 L220 246 L330 286 L430 214 L538 260 L538 416 L112 416 Z' fill='%23123655'/%3E%3Cpath d='M112 350 L200 312 L300 348 L400 300 L538 340 L538 416 L112 416 Z' fill='%23145a78' opacity='.85'/%3E%3Ccircle cx='474' cy='206' r='17' fill='%2359d0ff' opacity='.85'/%3E%3Cg fill='%23ffffff' opacity='.85'%3E%3Crect x='134' y='182' width='120' height='8' rx='4'/%3E%3Crect x='134' y='198' width='72' height='6' rx='3' opacity='.6'/%3E%3C/g%3E%3Crect x='606' y='120' width='212' height='118' rx='14' fill='url(%23panel)'/%3E%3Cg fill='%23ffffff' opacity='.92'%3E%3Crect x='628' y='146' width='120' height='10' rx='5'/%3E%3Crect x='628' y='166' width='160' height='7' rx='3.5' opacity='.75'/%3E%3Crect x='628' y='182' width='96' height='7' rx='3.5' opacity='.55'/%3E%3C/g%3E%3Crect x='606' y='268' width='212' height='176' rx='14' fill='%230f2540' stroke='%2359d0ff' stroke-opacity='.4'/%3E%3Cg fill='%2359d0ff'%3E%3Crect x='630' y='296' width='44' height='44' rx='10' opacity='.85'/%3E%3Crect x='692' y='296' width='100' height='10' rx='5' opacity='.8'/%3E%3Crect x='692' y='314' width='70' height='7' rx='3.5' opacity='.5'/%3E%3Crect x='630' y='358' width='44' height='44' rx='10' opacity='.5'/%3E%3Crect x='692' y='358' width='100' height='10' rx='5' opacity='.6'/%3E%3Crect x='692' y='376' width='54' height='7' rx='3.5' opacity='.4'/%3E%3C/g%3E%3Cg stroke='%2359d0ff' stroke-opacity='.3' fill='none'%3E%3Cpath d='M560 300 C590 300 590 220 620 220'/%3E%3Cpath d='M560 300 C590 300 590 356 620 356'/%3E%3C/g%3E%3C/svg%3E" width="900" height="560" alt="maya论坛powered by Discuz! 官方视频门户主视觉：深色技术界面与影像播放面板并置">
+          <span class="mfx-play-badge">高清 4K</span>
+          <figcaption>《社区十五年：从一条帖子到一座影像档案馆》</figcaption>
+        </figure>
+        <div class="mfx-hero-float">
+          <span class="mfx-dot-live" aria-hidden="true"></span>
+          <div>
+            <b>本周更新 18 支高清视频</b>
+            <small>教程 · 访谈 · 城市现场 · 创作幕后</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搜索结果提示 -->
+  <div class="mfx-wrap" style="padding-top:26px">
+    <div class="mfx-search-hint" id="mfx-search-hint" role="status" aria-live="polite"></div>
+    <div class="mfx-filter-empty" id="mfx-filter-empty">没有找到匹配的内容，换个关键词试试，例如「教程」「访谈」「城市」。</div>
+  </div>
+
+  <!-- S3 焦点内容 + 视频流 -->
+  <section class="mfx-section" id="mfx-focus" aria-labelledby="mfx-focus-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-focus-h2">焦点内容 · maya论坛powered by Discuz! 本周重点推荐</h2>
+          <p>由官方编辑团队与社区共创者联合遴选，覆盖教程干货、人物访谈与城市现场三个方向，所有视频均为正版高清发布。</p>
+        </div>
+        <a class="mfx-sec-more" href="#mfx-topics">查看全部专题</a>
+      </div>
+
+      <div class="mfx-focus">
+        <article class="mfx-focus-card mfx-searchable" data-keywords="论坛 档案馆 品牌故事 纪录短片 社区 十五年">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23dfefff'/%3E%3Cstop offset='1' stop-color='%23a9d8e8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a1)'/%3E%3Cg stroke='%23123a5c' stroke-opacity='.18' fill='none'%3E%3Cpath d='M0 330 L200 250 L360 300 L520 220 L800 300'/%3E%3Cpath d='M0 380 L200 300 L360 350 L520 270 L800 350'/%3E%3C/g%3E%3Cg%3E%3Crect x='78' y='96' width='300' height='200' rx='12' fill='%23ffffff' opacity='.92'/%3E%3Crect x='100' y='118' width='120' height='10' rx='5' fill='%232b6ff2'/%3E%3Crect x='100' y='142' width='256' height='8' rx='4' fill='%23123a5c' opacity='.35'/%3E%3Crect x='100' y='162' width='210' height='8' rx='4' fill='%23123a5c' opacity='.25'/%3E%3Crect x='100' y='196' width='80' height='66' rx='8' fill='%2318c2d9' opacity='.8'/%3E%3Crect x='192' y='196' width='80' height='66' rx='8' fill='%232b6ff2' opacity='.55'/%3E%3Crect x='284' y='196' width='72' height='66' rx='8' fill='%23123a5c' opacity='.3'/%3E%3C/g%3E%3Cg%3E%3Ccircle cx='580' cy='190' r='86' fill='%23ffffff' opacity='.85'/%3E%3Cpath d='M552 152 L626 190 L552 228 Z' fill='%2318c2d9'/%3E%3C/g%3E%3Cg fill='%23123a5c' opacity='.55'%3E%3Crect x='500' y='300' width='210' height='9' rx='4.5'/%3E%3Crect x='500' y='320' width='160' height='8' rx='4'/%3E%3Crect x='500' y='340' width='120' height='8' rx='4'/%3E%3C/g%3E%3C/svg%3E" width="800" height="450" alt="《社区十五年》纪录短片封面：档案纸张与播放按钮构成的主视觉">
+            <span class="mfx-play-badge">重点推荐</span>
+          </figure>
+          <div class="mfx-focus-body">
+            <div class="mfx-tagrow">
+              <span class="mfx-tag">品牌故事</span>
+              <span class="mfx-tag warm">年度企划</span>
+              <span class="mfx-tag">纪录短片</span>
+            </div>
+            <h3>《社区十五年：从一条帖子到一座影像档案馆》</h3>
+            <p>我们回到 maya论坛powered by Discuz! 最早的一批板块，采访仍在更新的老版主与技术写作者。一支 26 分钟的纪录短片，讲清一个社区如何把讨论沉淀成内容生态，又如何被影像重新讲给下一代同好听。</p>
+            <div class="mfx-meta">
+              <span>官方内容中心</span>
+              <span>26:14</span>
+              <button class="mfx-act mfx-like" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.2-8.6C1.2 8.8 3 5 6.6 5c2 0 3.4 1.1 4.4 2.5C12 6.1 13.4 5 15.4 5 19 5 20.8 8.8 21.2 12.4 19 16.6 12 21 12 21z"/></svg><b data-likes="1832">1832</b></button>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><b>收藏</b></button>
+              <button class="mfx-act mfx-copy" type="button" data-title="《社区十五年：从一条帖子到一座影像档案馆》">复制链接</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="mfx-vlist">
+          <div class="mfx-vitem mfx-searchable" data-keywords="教程 插件 配置 搭建 实战">
+            <span class="mfx-vnum">01</span>
+            <div>
+              <div class="mfx-vtitle">从零配置一套稳定的社区视频上传链路</div>
+              <p>限速、转码、分片与失败重试，一次讲清楚。适合刚接手站点运维的社区志愿者。</p>
+              <div class="mfx-vmeta"><span>作者：阿栈</span><span>18:40</span><span>教程干货</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag">高清</span>
+              <span class="mfx-vstat">播放 4.2万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+          <div class="mfx-vitem mfx-searchable" data-keywords="访谈 版主 十年 社区 运营">
+            <span class="mfx-vnum">02</span>
+            <div>
+              <div class="mfx-vtitle">访谈：一位版主在论坛坚守的第十年</div>
+              <p>从每日巡查到组织线下聚会，他谈社区治理里最容易被忽略的耐心。</p>
+              <div class="mfx-vmeta"><span>作者：林逾白</span><span>32:05</span><span>人物访谈</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag warm">访谈</span>
+              <span class="mfx-vstat">播放 2.8万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+          <div class="mfx-vitem mfx-searchable" data-keywords="城市 现场 技术 分享会 线下">
+            <span class="mfx-vnum">03</span>
+            <div>
+              <div class="mfx-vtitle">城市技术现场 · 杭州站的十二个小时</div>
+              <p>一场从午后开到深夜的分享会，记录台上台下的真实交流与临场提问。</p>
+              <div class="mfx-vmeta"><span>作者：城市影像组</span><span>21:36</span><span>城市探索</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag">现场</span>
+              <span class="mfx-vstat">播放 1.9万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+          <div class="mfx-vitem mfx-searchable" data-keywords="测评 编辑器 对比 效率 工具">
+            <span class="mfx-vnum">04</span>
+            <div>
+              <div class="mfx-vtitle">四款社区编辑器横评：谁更适合长文作者</div>
+              <p>从公式、代码块到图片压缩，我们用同一篇长文做了完整测试。</p>
+              <div class="mfx-vmeta"><span>作者：测量员K</span><span>15:22</span><span>深度测评</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag">测评</span>
+              <span class="mfx-vstat">播放 3.4万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+          <div class="mfx-vitem mfx-searchable" data-keywords="创作幕后 剪辑 素材 流程">
+            <span class="mfx-vnum">05</span>
+            <div>
+              <div class="mfx-vtitle">创作幕后：一支社区短片如何被剪出来</div>
+              <p>素材整理、结构重排、声音设计，完整还原 72 小时的剪辑过程。</p>
+              <div class="mfx-vmeta"><span>作者：陈叙</span><span>24:48</span><span>创作幕后</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag warm">幕后</span>
+              <span class="mfx-vstat">播放 1.2万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+          <div class="mfx-vitem mfx-searchable" data-keywords="行业观察 内容生态 论坛 趋势">
+            <span class="mfx-vnum">06</span>
+            <div>
+              <div class="mfx-vtitle">行业观察：论坛内容正在重新变得重要</div>
+              <p>当信息越来越碎，长文本、可检索、可追溯的社区讨论重回价值中心。</p>
+              <div class="mfx-vmeta"><span>作者：沈无声</span><span>19:10</span><span>行业观察</span></div>
+            </div>
+            <div class="mfx-vside">
+              <span class="mfx-tag">观察</span>
+              <span class="mfx-vstat">播放 2.1万</span>
+              <button class="mfx-act mfx-fav" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="mfx-section alt" id="mfx-topics" aria-labelledby="mfx-topics-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-topics-h2">专题企划 · 与创作者共同推进的长期内容项目</h2>
+          <p>maya论坛powered by Discuz! 每年围绕社区、技术与城市立项，专题内所有内容由官方与创作者联合出品，持续运营、定时更新。</p>
+        </div>
+        <a class="mfx-sec-more" href="#mfx-submit">申请联合出品</a>
+      </div>
+      <div class="mfx-topic-grid">
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 技术 长文 写作 教程">
+          <div class="mfx-topic-head">
+            <h3>写作者的十年</h3>
+            <span class="mfx-status live">更新中</span>
+          </div>
+          <p>追踪十位长期在论坛输出的技术写作者，记录他们如何选题、查资料、校对与回应质疑。</p>
+          <ul>
+            <li>第 1 集：一篇爆款帖子背后的七次改写</li>
+            <li>第 2 集：如何把踩坑记录写成可复用教程</li>
+            <li>第 3 集：被质疑之后，我如何校对技术结论</li>
+          </ul>
+        </article>
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 城市 现场 分享会 活动">
+          <div class="mfx-topic-head">
+            <h3>城市技术现场</h3>
+            <span class="mfx-status live">更新中</span>
+          </div>
+          <p>把镜头带到线下，记录每个城市自发组织的技术分享会与创作者聚会，保留最真实的交流氛围。</p>
+          <ul>
+            <li>杭州站：十二小时的提问与回答</li>
+            <li>成都站：一场关于开源协作的夜谈</li>
+            <li>西安站：高校社团如何接住社区流量</li>
+          </ul>
+        </article>
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 新人 扶持 投稿 报名">
+          <div class="mfx-topic-head">
+            <h3>新人影像扶持计划</h3>
+            <span class="mfx-status soon">报名中</span>
+          </div>
+          <p>面向第一次拍摄社区题材的创作者，提供脚本评审、拍摄指导与官方首页推荐位。</p>
+          <ul>
+            <li>从选题到成片：三周集中辅导安排</li>
+            <li>官方设备与后期资源借用说明</li>
+            <li>结项作品进入年度精品内容池</li>
+          </ul>
+        </article>
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 品牌 故事 理念 深度解析">
+          <div class="mfx-topic-head">
+            <h3>社区十五年档案</h3>
+            <span class="mfx-status done">已完结</span>
+          </div>
+          <p>以时间线整理社区十五年关键节点，配套六支纪录短片与一份可检索的图文档案。</p>
+          <ul>
+            <li>2009–2013：板块初建与第一批版主</li>
+            <li>2014–2019：从内容沉淀到创作者培养</li>
+            <li>2020–2026：影像化与多城市站点</li>
+          </ul>
+        </article>
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 测评 工具 效率">
+          <div class="mfx-topic-head">
+            <h3>工具测评实验室</h3>
+            <span class="mfx-status live">更新中</span>
+          </div>
+          <p>每月一期，围绕社区高频使用的工具做可复现的横向测评，结论公开、过程留档。</p>
+          <ul>
+            <li>编辑效率对比：长文写作场景实测</li>
+            <li>图片压缩对加载速度的真实影响</li>
+            <li>多端同步的稳定性压力测试</li>
+          </ul>
+        </article>
+        <article class="mfx-topic mfx-searchable" data-keywords="专题 兴趣 同好 社区 共创">
+          <div class="mfx-topic-head">
+            <h3>兴趣同好共创季</h3>
+            <span class="mfx-status soon">筹备中</span>
+          </div>
+          <p>由社区成员自主组队申报的共创单元，官方提供脚本模板与播出排期支持。</p>
+          <ul>
+            <li>手作与硬件改造的纪录短片征集</li>
+            <li>独立音乐现场与论坛故事的交叉提案</li>
+            <li>投稿作品公开投票与展映安排</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 关键词解析（长文，3-4 H3，≥800字） -->
+  <section class="mfx-section" id="mfx-analyze" aria-labelledby="mfx-analyze-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-analyze-h2">社区解析 · maya论坛powered by Discuz! 为什么值得持续被观看</h2>
+          <p>品牌团队撰写的深度说明，从社区结构、内容生产、影像转化与长期运营四个层面展开，帮助新同好快速理解我们是谁、在做什么。</p>
+        </div>
+      </div>
+      <article class="mfx-analytic">
+        <p class="mfx-analytic-lead">很多人第一次接触 maya论坛powered by Discuz! 是通过一个具体问题：某个配置怎么写、某个报错怎么修、某个工具能不能替换。问题解决之后，人们往往留下，因为这里还有大量愿意继续讨论的人。作为官方网站的视频板块，我们要做的不是重复回答，而是把这种持续发生的讨论记录下来，让后来者可以按图索骥地看、跟着做、再回来提问。这正是内容生态存在的意义。</p>
+
+        <h3>社区结构：可检索的讨论，才是有生命力的内容</h3>
+        <p>论坛的独特之处在于结构。一条帖子天然包含标题、上下文、跟帖和修订历史，它不像社交平台的即时信息那样容易被冲走。十五年来，maya论坛powered by Discuz! 积累了大量垂直领域的问答、教程与经验复盘。这些内容在今天仍然可以被搜索到、被引用、被纠正。我们把其中反复被访问的条目挑出来，组织成视频与图文并行的索引：观众既可以先用几分钟看懂结论，也可以顺着链接回到原始帖子核对细节。对技术社区来说，这种可追溯性比短期热度重要得多，也是我们坚持正版、高清、专业呈现的原因——影像不能成为新的信息损耗环节。</p>
+        <p>在策划上，我们为每一支视频保留三个入口：问题入口、过程入口和延伸入口。问题入口负责让新观众明白这条视频解决什么；过程入口展示真实操作与踩坑；延伸入口则链接到论坛中的相关讨论与后续更新。这样的结构让视频不只是看完即走的内容，而成为社区知识网络的一个节点，也让创作者的内容生态真正连成一片。</p>
+
+        <h3>内容生产：从发帖者到创作者，需要被认真对待</h3>
+        <p>社区里最宝贵的是长期输出者。他们通常不收稿费，仅凭兴趣把踩坑过程写成文字。我们做视频板块的第一件事，就是把这些文字作者请到镜头前，或由编辑团队协助他们把文字转成影像。这个过程并不轻松：文字里的隐含前提、截图里的环境、代码块之外的上下文，都需要在视频里重新交代清楚。因此我们建立了选题评审、脚本模板和剪辑规范三件工具，并公开给所有投稿者。新人影像扶持计划正是为了让第一次拍摄社区题材的人少走弯路，也让更多细分领域的经验被看见。我们相信，只有让创作者获得稳定的曝光、可预期的反馈和清晰的版权保护，一个品牌才能真正被称为值得信赖的垂直领域平台。</p>
+        <p>目前社区已认证的创作者覆盖教程、测评、访谈、城市探索与创作幕后等多个方向。我们为每位签约创作者提供作品页、数据面板与粉丝互动工具，同时保留他们对自己内容的完整控制权。官方只做三件事：保证播出质量、维护讨论秩序、把好的内容送到更合适的人面前。没有这三件事，再热闹的社区也会逐渐失去公信力。</p>
+
+        <h3>影像转化：让技术讨论拥有被观看的质感</h3>
+        <p>很多人误以为技术类视频只能对着屏幕录屏。实际上，社区题材有丰富的视觉可能：一台老旧服务器的重启、一屋子人围坐提问、一段跑了十年的脚本在终端里滚动、版主深夜整理版务时的窗外。我们要求每支重点视频都至少有一处真实场景的实拍，而不是全部依赖图文拼接。为此，团队在多个城市建立了拍摄协作点，也鼓励创作者使用手机完成基础素材。高清不只是分辨率，更包括声音清楚、字幕准确、结论可验证。</p>
+        <p>我们同样重视数据与口碑的平衡。播放量可以帮助判断选题是否被需要，但不应成为唯一指标。我们在页面上同时展示播放、点赞与收藏，收藏数往往更能说明一条教程是否真的对观众有用。每季度的社区口碑调研中，我们会邀请不同年限的成员评价内容的准确性与实用性，并把意见直接反馈给创作者。这种机制让平台、创作者与观众形成闭环，也让行业领先不只是一句宣传语。</p>
+
+        <h3>长期运营：社区需要被陪伴，而不是被消费</h3>
+        <p>一个视频品牌官网若只做内容陈列，很快就会停滞。我们把公告条、企业动态与更新日志视为与社区对话的窗口：新功能上线、扶持计划报名、线下活动日程、内容规范修订，都会在这里第一时间发布。同时，我们保留反馈与举报入口，任何关于准确性、版权或社区氛围的问题都可以直达运营团队。用户至上是具体的工作流程，而不是口号。过去一年，社区新增了投稿批次管理、版本回滚、多语言字幕协作等功能，绝大多数来自创作者的真实建议。</p>
+        <p>面向未来，maya论坛powered by Discuz! 会继续把论坛的结构性优势带进影像表达：坚持可检索、可追溯、可讨论；继续扩大创作者矩阵，让更多垂直领域被看见；继续用真实、温暖、有力量的叙事，记录技术社区里那些看似日常却值得被保存的时刻。我们欢迎每一位同好报名参与、上传作品、投票评选，也欢迎提出批评——这正是社区持续生长的力量来源。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- S6 创作者矩阵 -->
+  <section class="mfx-section alt" id="mfx-authors" aria-labelledby="mfx-authors-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-authors-h2">创作者矩阵 · 让专业的人被更多人看见</h2>
+          <p>以下是 maya论坛powered by Discuz! 官方网站部分认证创作者，点击「档案」可查看其领域、作品与合作方式。</p>
+        </div>
+        <a class="mfx-sec-more" href="#mfx-submit">成为创作者</a>
+      </div>
+      <div class="mfx-authors">
+        <article class="mfx-author mfx-searchable" data-keywords="阿栈 教程 运维 上传 部署">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#2b6ff2,#18c2d9)">栈</span>
+          <div>
+            <h3>阿栈 <button class="mfx-author-btn" type="button" data-author="阿栈" data-field="社区工程与部署教程" data-desc="长期维护社区部署教程合集，擅长把复杂配置拆成可复现的步骤。作品以实操为主，每支视频都附带可下载的检查清单。">档案</button></h3>
+            <p class="mfx-field">社区工程 · 部署教程</p>
+            <p>长期维护社区部署教程合集，擅长把复杂配置拆成可复现的步骤。作品以实操为主，每支视频都附带可下载的检查清单。</p>
+            <p class="mfx-anums"><span>作品 86</span><span>粉丝 5.4万</span></p>
+          </div>
+        </article>
+        <article class="mfx-author mfx-searchable" data-keywords="林逾白 访谈 版主 社区治理">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#0e94a8,#123a5c)">林</span>
+          <div>
+            <h3>林逾白 <button class="mfx-author-btn" type="button" data-author="林逾白" data-field="人物访谈与社区治理" data-desc="访谈栏目主理人，关注社区治理与长期运营。擅长用克制的提问让受访者讲出真实细节，代表作《版主十年》系列。">档案</button></h3>
+            <p class="mfx-field">人物访谈 · 社区治理</p>
+            <p>访谈栏目主理人，关注社区治理与长期运营。擅长用克制的提问让受访者讲出真实细节，代表作《版主十年》系列。</p>
+            <p class="mfx-anums"><span>作品 42</span><span>粉丝 3.1万</span></p>
+          </div>
+        </article>
+        <article class="mfx-author mfx-searchable" data-keywords="测量员K 测评 工具 效率 对比">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#ff9f43,#f2632b)">K</span>
+          <div>
+            <h3>测量员K <button class="mfx-author-btn" type="button" data-author="测量员K" data-field="工具测评与效率方法" data-desc="坚持可复现的测评方法，每期公开测试环境与原始数据。擅长把工具对比做得有结论，也愿意承认测试的局限。">档案</button></h3>
+            <p class="mfx-field">工具测评 · 效率方法</p>
+            <p>坚持可复现的测评方法，每期公开测试环境与原始数据。擅长把工具对比做得有结论，也愿意承认测试的局限。</p>
+            <p class="mfx-anums"><span>作品 65</span><span>粉丝 4.7万</span></p>
+          </div>
+        </article>
+        <article class="mfx-author mfx-searchable" data-keywords="陈叙 创作幕后 剪辑 影像">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#7a5cf0,#2b6ff2)">叙</span>
+          <div>
+            <h3>陈叙 <button class="mfx-author-btn" type="button" data-author="陈叙" data-field="创作幕后与影像剪辑" data-desc="专注幕后记录与剪辑教学，喜欢把失败素材也留在成片里。相信过程比结果更能说明一支社区短片的价值。">档案</button></h3>
+            <p class="mfx-field">创作幕后 · 影像剪辑</p>
+            <p>专注幕后记录与剪辑教学，喜欢把失败素材也留在成片里。相信过程比结果更能说明一支社区短片的价值。</p>
+            <p class="mfx-anums"><span>作品 38</span><span>粉丝 2.6万</span></p>
+          </div>
+        </article>
+        <article class="mfx-author mfx-searchable" data-keywords="沈无声 行业观察 内容生态">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#12c46a,#0e94a8)">沈</span>
+          <div>
+            <h3>沈无声 <button class="mfx-author-btn" type="button" data-author="沈无声" data-field="行业观察与内容生态" data-desc="从数据与案例出发讨论社区与内容生态的变化，反对空泛的趋势判断。每期视频配一份可查证的资料清单。">档案</button></h3>
+            <p class="mfx-field">行业观察 · 内容生态</p>
+            <p>从数据与案例出发讨论社区与内容生态的变化，反对空泛的趋势判断。每期视频配一份可查证的资料清单。</p>
+            <p class="mfx-anums"><span>作品 51</span><span>粉丝 3.8万</span></p>
+          </div>
+        </article>
+        <article class="mfx-author mfx-searchable" data-keywords="城市影像组 城市探索 现场 在地文化">
+          <span class="mfx-avatar" style="background:linear-gradient(135deg,#e0457b,#7a5cf0)">城</span>
+          <div>
+            <h3>城市影像组 <button class="mfx-author-btn" type="button" data-author="城市影像组" data-field="城市探索与在地文化" data-desc="由三名摄影师组成的协作单元，专门记录各城市的线下技术聚会。擅长在嘈杂现场中捕捉真正有信息量的对话瞬间。">档案</button></h3>
+            <p class="mfx-field">城市探索 · 在地文化</p>
+            <p>由三名摄影师组成的协作单元，专门记录各城市的线下技术聚会。擅长在嘈杂现场中捕捉真正有信息量的对话瞬间。</p>
+            <p class="mfx-anums"><span>作品 73</span><span>粉丝 6.2万</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 用户评价 + 企业动态 + 合作品牌 -->
+  <section class="mfx-section" id="mfx-comments" aria-labelledby="mfx-comments-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-comments-h2">用户口碑 · 来自社区的真实反馈</h2>
+          <p>以下评价来自 maya论坛powered by Discuz! 的注册成员与创作者，内容经授权整理，保留原始语气。</p>
+        </div>
+      </div>
+      <div class="mfx-comments">
+        <article class="mfx-comment top">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#2b6ff2,#18c2d9)">舟</span><b>一叶舟</b><span>注册 9 年</span></div>
+          <p>《社区十五年》我看哭了。当年就是在论坛里学会的第一条命令，现在轮到我给新人回帖了。希望这种纪录能一直拍下去。</p>
+          <div class="mfx-stars" aria-label="评分 5 星">★★★★★</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#0e94a8,#12c46a)">北</span><b>北岸的风</b><span>注册 3 年</span></div>
+          <p>部署教程那一期帮我省了整整一个通宵。视频里把失败的分支也讲了，这个细节特别难得。</p>
+          <div class="mfx-stars" aria-label="评分 5 星">★★★★★</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#ff9f43,#f2632b)">小</span><b>小满</b><span>注册 1 年</span></div>
+          <p>画面很清楚，字幕也准。唯一建议是有些长视频能不能加个分段目录，方便跳着看。</p>
+          <div class="mfx-stars" aria-label="评分 4 星">★★★★☆</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#7a5cf0,#2b6ff2)">阿</span><b>阿岚</b><span>创作者</span></div>
+          <p>作为投稿者说一句：审核会给具体修改意见，不是一句「不符合要求」就退回来，这点让人愿意继续投。</p>
+          <div class="mfx-stars" aria-label="评分 5 星">★★★★★</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#e0457b,#7a5cf0)">烬</span><b>余烬</b><span>注册 6 年</span></div>
+          <p>工具测评那期结论和我实测有出入，在评论区提了之后作者专门补了一期说明，还把测试环境贴出来了。这种态度值得信赖。</p>
+          <div class="mfx-stars" aria-label="评分 4 星">★★★★☆</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#123a5c,#0e94a8)">木</span><b>木羽</b><span>版主</span></div>
+          <p>城市现场系列把线下聚会的氛围拍出来了，比我拍的照片强太多。希望明年能来我们这座城市。</p>
+          <div class="mfx-stars" aria-label="评分 5 星">★★★★★</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#18c2d9,#12c46a)">秋</span><b>秋刀鱼</b><span>注册 2 年</span></div>
+          <p>首页的收藏功能挺顺手，我把自己需要的教程都存起来了，可惜收藏夹还不能分组。</p>
+          <div class="mfx-stars" aria-label="评分 4 星">★★★★☆</div>
+        </article>
+        <article class="mfx-comment">
+          <div class="mfx-comment-head"><span class="mfx-avatar" style="background:linear-gradient(135deg,#2b6ff2,#7a5cf0)">南</span><b>南山客</b><span>注册 10 年</span></div>
+          <p>从纯文字论坛到今天的视频官网，变化很大但底子没变：还是回答问题、留资料、认认真真讨论。这就是我留在这里的原因。</p>
+          <div class="mfx-stars" aria-label="评分 5 星">★★★★★</div>
+        </article>
+      </div>
+
+      <div class="mfx-two-col" style="margin-top:34px">
+        <div>
+          <div class="mfx-sec-head" style="margin-bottom:14px">
+            <div><h2 style="font-size:20px">企业动态 · 官方发布与内容更新</h2></div>
+          </div>
+          <ul class="mfx-news">
+            <li>
+              <time datetime="2026-11-20">11-20</time>
+              <div><b>创作者扶持计划 2026 冬季批开放报名</b><p>新增 40 个高清影像制作名额，报名截止 12 月 12 日，入选者可获得脚本评审与拍摄指导。</p></div>
+            </li>
+            <li>
+              <time datetime="2026-11-16">11-16</time>
+              <div><b>年度影像志正式上线</b><p>《maya论坛powered by Discuz! 技术社区年度影像志》共 12 支原创纪录短片，已在焦点内容区陆续发布。</p></div>
+            </li>
+            <li>
+              <time datetime="2026-11-09">11-09</time>
+              <div><b>投稿通道支持批量上传与版本回滚</b><p>创作者可一次上传多支素材，并对已提交的内容做版本回滚，历史记录完整保留。</p></div>
+            </li>
+            <li>
+              <time datetime="2026-11-02">11-02</time>
+              <div><b>内容规范 2.1 版发布</b><p>补充了引用规范与版权说明，明确了二次剪辑的授权边界，已在帮助中心同步更新。</p></div>
+            </li>
+            <li>
+              <time datetime="2026-10-26">10-26</time>
+              <div><b>十二月线下分享会开放预约</b><p>「城市技术现场」新增两站，免费预约，名额有限，具体日程见专题企划。</p></div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="mfx-sec-head" style="margin-bottom:14px">
+            <div><h2 style="font-size:20px">合作品牌 · 长期共创伙伴</h2></div>
+          </div>
+          <div class="mfx-partners">
+            <div class="mfx-partner"><i style="background:#2b6ff2">云</i>云枢数据服务</div>
+            <div class="mfx-partner"><i style="background:#0e94a8">北</i>北纬影像器材</div>
+            <div class="mfx-partner"><i style="background:#ff9f43">字</i>字里工作室</div>
+            <div class="mfx-partner"><i style="background:#12c46a">开</i>开源协作联盟</div>
+            <div class="mfx-partner"><i style="background:#7a5cf0">声</i>声场录音棚</div>
+            <div class="mfx-partner"><i style="background:#e0457b">校</i>高校技术社团联会</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助：创作灵感 + FAQ -->
+  <section class="mfx-section alt" id="mfx-help" aria-labelledby="mfx-help-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-sec-head">
+        <div>
+          <h2 id="mfx-help-h2">创作灵感与帮助中心</h2>
+          <p>整理自社区高频提问与官方经验，帮助第一次拍摄社区题材的创作者少走弯路。</p>
+        </div>
+      </div>
+      <div class="mfx-two-col">
+        <div>
+          <div class="mfx-faq">
+            <details open>
+              <summary>第一次投稿，视频时长有要求吗？</summary>
+              <div class="mfx-faq-body">建议 5–30 分钟，教程类可适当延长。我们更看重信息密度与结论准确，而不是时长本身。超过 30 分钟的内容建议拆成上下集，或在页面内提供分段目录。</div>
+            </details>
+            <details>
+              <summary>拍摄设备一定要专业吗？</summary>
+              <div class="mfx-faq-body">不一定。清晰的声音与稳定的画面比器材更重要。手机拍摄请尽量使用外接麦克风与固定支架，并在提交时附上拍摄环境说明，方便审核团队判断。</div>
+            </details>
+            <details>
+              <summary>内容中出现他人帖子截图，需要授权吗？</summary>
+              <div class="mfx-faq-body">需要。请在提交时说明引用来源，并取得作者同意。涉及个人隐私信息请务必打码，我们会在审核阶段逐条核对引用规范。</div>
+            </details>
+            <details>
+              <summary>入选后多久上线？可以修改吗？</summary>
+              <div class="mfx-faq-body">一般在审核通过后排期，通常为 2–4 周。上线前可提出一次修改；上线后如需更正事实错误，可通过反馈入口提交，我们会以版本说明形式公开修订记录。</div>
+            </details>
+            <details>
+              <summary>视频的版权归谁？</summary>
+              <div class="mfx-faq-body">创作者保留作品的著作权。官方获得在官方网站及相关官方渠道展示、推荐与存档的授权，具体范围见投稿页的授权说明。我们坚持正版，也尊重每一位创作者的署名与收益安排。</div>
+            </details>
+            <details>
+              <summary>如何加入创作者扶持计划？</summary>
+              <div class="mfx-faq-body">在投稿页选择「扶持计划报名」，填写选题方向与拍摄计划即可。每季度集中评审一次，入选者会收到脚本评审、拍摄指导与首页推荐位支持。</div>
+            </details>
+            <details>
+              <summary>发现内容有误，怎么反馈？</summary>
+              <div class="mfx-faq-body">在视频页点击「复制链接」旁的反馈入口，或通过帮助中心的反馈表单提交，注明时间点与具体问题。核实后我们会联系作者补充说明，并在页面标注修订。</div>
+            </details>
+          </div>
+        </div>
+        <div>
+          <div class="mfx-vlist">
+            <div class="mfx-vitem">
+              <span class="mfx-vnum">灵</span>
+              <div>
+                <div class="mfx-vtitle">选题灵感：把一次「踩坑」写成三步</div>
+                <p>现象 → 排查路径 → 最终结论。三步结构最适合新手，也最容易被观众记住。</p>
+              </div>
+            </div>
+            <div class="mfx-vitem">
+              <span class="mfx-vnum">灵</span>
+              <div>
+                <div class="mfx-vtitle">标题建议：先说清解决什么，再说亮点</div>
+                <p>「如何…」「一次讲清…」「我踩过的三个…」这类句式比悬念式标题更适配技术社区。</p>
+              </div>
+            </div>
+            <div class="mfx-vitem">
+              <span class="mfx-vnum">灵</span>
+              <div>
+                <div class="mfx-vtitle">剪辑思路：保留失败素材，增加可信度</div>
+                <p>真实的报错、重试和犹豫比完美流程更有信息量，也更符合社区的真实气质。</p>
+              </div>
+            </div>
+            <div class="mfx-vitem">
+              <span class="mfx-vnum">灵</span>
+              <div>
+                <div class="mfx-vtitle">脚本模板：一张可下载的结构清单</div>
+                <p>投稿页提供脚本模板，包含开场、问题陈述、演示、结论与延伸链接五个部分。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 投稿 -->
+  <section class="mfx-section" id="mfx-submit" aria-labelledby="mfx-submit-h2">
+    <div class="mfx-wrap">
+      <div class="mfx-submit">
+        <div>
+          <h2 id="mfx-submit-h2">把你的经验拍下来，交给社区</h2>
+          <p>maya论坛powered by Discuz! 官方网站长期开放投稿与共创报名。无论你是第一次拿相机，还是已经拍了多年，只要内容真实、结论可查，我们都愿意为你安排一个位置。</p>
+          <div class="mfx-submit-actions">
+            <button class="mfx-btn mfx-btn-primary" type="button" id="mfx-open-submit">立即投稿 / 报名</button>
+            <button class="mfx-btn mfx-btn-ghost" type="button" id="mfx-open-report">反馈与举报</button>
+          </div>
+        </div>
+        <ul class="mfx-submit-list">
+          <li>支持批量上传高清素材，保留版本回滚</li>
+          <li>审核给出具体修改意见，不敷衍退回</li>
+          <li>入选作品进入精品内容池与年度影像志</li>
+          <li>创作者保留著作权，署名与授权可协商</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mfx-footer">
+  <div class="mfx-wrap">
+    <div class="mfx-footer-grid">
+      <div>
+        <span class="mfx-brand-mark" aria-hidden="true">M</span>
+        <h4>maya论坛powered by Discuz!</h4>
+        <p>技术社区的官方视频门户。我们以原创、正版、高清为底线，深耕垂直领域内容，持续运营一个值得信赖的创作者社区，让真实的经验被看见、被保存、被传递。</p>
+      </div>
+      <div>
+        <h4>浏览内容</h4>
+        <ul>
+          <li><a href="#mfx-focus">焦点内容</a></li>
+          <li><a href="#mfx-topics">专题企划</a></li>
+          <li><a href="#mfx-analyze">社区解析</a></li>
+          <li><a href="#mfx-authors">创作者矩阵</a></li>
+          <li><a href="#mfx-comments">用户口碑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与社区</h4>
+        <ul>
+          <li><a href="#mfx-submit">投稿与报名</a></li>
+          <li><a href="#mfx-help">帮助中心</a></li>
+          <li><a href="#mfx-submit">反馈与举报</a></li>
+          <li><a href="#mfx-topics">城市线下活动</a></li>
+          <li><a href="#mfx-analyze">品牌故事</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#mfx-analyze">企业简介与理念</a></li>
+          <li><a href="#mfx-comments">企业动态</a></li>
+          <li><a href="#mfx-comments">合作品牌</a></li>
+          <li><a href="#mfx-help">内容规范</a></li>
+          <li><a href="#mfx-top">回到页面顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mfx-footer-bottom">
+      <span>maya论坛powered by Discuz! 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容授权与版权说明见帮助中心 ｜ 社区备案信息：社区内容服务备字第 2026-1117 号</span>
+    </div>
+  </div>
+</footer>
+
+<button class="mfx-to-top" id="mfx-to-top" type="button" aria-label="回到顶部">↑</button>
+<div class="mfx-toast" id="mfx-toast" role="status" aria-live="polite"></div>
+
+<div class="mfx-modal" id="mfx-modal" aria-hidden="true">
+  <div class="mfx-modal-box" role="dialog" aria-modal="true" aria-labelledby="mfx-modal-title">
+    <button class="mfx-modal-close" id="mfx-modal-close" type="button" aria-label="关闭弹窗">×</button>
+    <h3 id="mfx-modal-title">提示</h3>
+    <div id="mfx-modal-body"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端导航 */
+  var nav = document.getElementById("mfx-nav");
+  var menuToggle = document.getElementById("mfx-menu-toggle");
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function(){
+      var open = nav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.textContent = open ? "×" : "☰";
+    });
+    nav.addEventListener("click", function(e){
+      if (e.target.tagName === "A") {
+        nav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      }
+    });
+  }
+
+  /* Toast */
+  var toast = document.getElementById("mfx-toast");
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 2200);
+  }
+
+  /* 弹窗 */
+  var modal = document.getElementById("mfx-modal");
+  var modalTitle = document.getElementById("mfx-modal-title");
+  var modalBody = document.getElementById("mfx-modal-body");
+  function openModal(title, html){
+    if (!modal) return;
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+  }
+  function closeModal(){
+    if (!modal) return;
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+  }
+  var modalClose = document.getElementById("mfx-modal-close");
+  if (modalClose) modalClose.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", function(e){ if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
+
+  /* 搜索过滤 */
+  var input = document.getElementById("mfx-search-input");
+  var searchBtn = document.getElementById("mfx-search-btn");
+  var hint = document.getElementById("mfx-search-hint");
+  var empty = document.getElementById("mfx-filter-empty");
+  function doSearch(){
+    var q = (input.value || "").trim().toLowerCase();
+    var items = document.querySelectorAll(".mfx-searchable");
+    if (!q) {
+      items.forEach(function(el){ el.style.display = ""; });
+      if (hint){ hint.classList.remove("show"); hint.textContent = ""; }
+      if (empty) empty.classList.remove("show");
+      return;
+    }
+    var hit = 0;
+    items.forEach(function(el){
+      var text = (el.textContent + " " + (el.getAttribute("data-keywords") || "")).toLowerCase();
+      var ok = text.indexOf(q) > -1;
+      el.style.display = ok ? "" : "none";
+      if (ok) hit++;
+    });
+    if (hint){
+      hint.textContent = "已按「" + input.value.trim() + "」筛选，" + hit + " 项内容匹配。清空搜索框可恢复全部内容。";
+      hint.classList.add("show");
+    }
+    if (empty) empty.classList.toggle("show", hit === 0);
+  }
+  if (searchBtn) searchBtn.addEventListener("click", doSearch);
+  if (input) {
+    input.addEventListener("input", function(){
+      if (!input.value.trim()) doSearch();
+    });
+    input.addEventListener("keydown", function(e){
+      if (e.key === "Enter") { e.preventDefault(); doSearch(); }
+    });
+  }
+
+  /* 点赞 */
+  document.querySelectorAll(".mfx-like").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var b = btn.querySelector("b");
+      var n = parseInt(b.getAttribute("data-likes"), 10) || 0;
+      var pressed = btn.getAttribute("aria-pressed") === "true";
+      if (pressed) {
+        n -= 1;
+        btn.classList.remove("on");
+        btn.setAttribute("aria-pressed", "false");
+        showToast("已取消点赞");
+      } else {
+        n += 1;
+        btn.classList.add("on");
+        btn.setAttribute("aria-pressed", "true");
+        showToast("点赞成功，感谢支持");
+      }
+      b.setAttribute("data-likes", n);
+      b.textContent = n;
+    });
+  });
+
+  /* 收藏 */
+  document.querySelectorAll(".mfx-fav").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var on = btn.classList.toggle("on");
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      var label = btn.querySelector("b");
+      if (label && label.textContent === "收藏") {
+        label.textContent = on ? "已收藏" : "收藏";
+      }
+      showToast(on ? "已加入收藏夹" : "已取消收藏");
+    });
+  });
+
+  /* 复制链接 */
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(function(){ return true; }).catch(function(){ return false; });
+    }
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return Promise.resolve(ok);
+    } catch(e) {
+      return Promise.resolve(false);
+    }
+  }
+  document.querySelectorAll(".mfx-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var title = btn.getAttribute("data-title") || "maya论坛powered by Discuz! 官方视频";
+      var fakeUrl = "https://maya-community-video.example/" + encodeURIComponent(title.slice(0, 24));
+      copyText(fakeUrl).then(function(ok){
+        showToast(ok ? "链接已复制，可分享给同好" : "复制失败，请手动分享");
+      });
+    });
+  });
+
+  /* 作者档案弹窗 */
+  document.querySelectorAll(".mfx-author-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var name = btn.getAttribute("data-author") || "";
+      var field = btn.getAttribute("data-field") || "";
+      var desc = btn.getAttribute("data-desc") || "";
+      openModal(name + " · 创作者档案",
+        "<p><strong>擅长领域：</strong>" + field + "</p>" +
+        "<p><strong>简介：</strong>" + desc + "</p>" +
+        "<p><strong>合作方式：</strong>可通过投稿入口提交联合出品提案，注明选题方向与预计周期，官方会在 5 个工作日内回复。</p>" +
+        "<p><strong>版权说明：</strong>创作者保留作品著作权，官方获得在官方网站及官方渠道展示、推荐与存档的授权。</p>"
+      );
+    });
+  });
+
+  /* 投稿弹窗 */
+  var openSubmit = document.getElementById("mfx-open-submit");
+  if (openSubmit) {
+    openSubmit.addEventListener("click", function(){
+      openModal("投稿 / 扶持计划报名",
+        '<div class="mfx-form-field"><label for="mfx-f-name">称呼</label><input id="mfx-f-name" type="text" placeholder="你希望被怎样称呼"></div>' +
+        '<div class="mfx-form-field"><label for="mfx-f-topic">选题方向</label><input id="mfx-f-topic" type="text" placeholder="例如：社区部署教程 / 城市现场访谈"></div>' +
+        '<div class="mfx-form-field"><label for="mfx-f-note">补充说明</label><textarea id="mfx-f-note" rows="3" placeholder="拍摄计划、时长、是否首次投稿"></textarea></div>' +
+        '<div class="mfx-modal-actions"><button class="mfx-btn mfx-btn-line" type="button" id="mfx-submit-cancel">取消</button><button class="mfx-btn mfx-btn-primary" type="button" id="mfx-submit-send">提交</button></div>'
+      );
+      var cancel = document.getElementById("mfx-submit-cancel");
+      var send = document.getElementById("mfx-submit-send");
+      if (cancel) cancel.addEventListener("click", closeModal);
+      if (send) send.addEventListener("click", function(){
+        var nameEl = document.getElementById("mfx-f-name");
+        var topicEl = document.getElementById("mfx-f-topic");
+        var name = nameEl ? nameEl.value.trim() : "";
+        var topic = topicEl ? topicEl.value.trim() : "";
+        if (!name || !topic) { showToast("请填写称呼与选题方向"); return; }
+        closeModal();
+        showToast("投稿信息已记录，审核团队将尽快联系你");
+      });
+    });
+  }
+
+  /* 反馈弹窗 */
+  var openReport = document.getElementById("mfx-open-report");
+  if (openReport) {
+    openReport.addEventListener("click", function(){
+      openModal("反馈与举报",
+        '<p>如果你发现内容存在事实错误、版权问题或社区氛围问题，请在这里告诉我们。核实后我们会联系作者补充说明，并在页面标注修订。</p>' +
+        '<div class="mfx-form-field"><label for="mfx-r-type">问题类型</label><input id="mfx-r-type" type="text" placeholder="例如：事实错误 / 版权 / 不当言论"></div>' +
+        '<div class="mfx-form-field"><label for="mfx-r-detail">具体情况</label><textarea id="mfx-r-detail" rows="3" placeholder="请注明视频标题与时间点"></textarea></div>' +
+        '<div class="mfx-modal-actions"><button class="mfx-btn mfx-btn-line" type="button" id="mfx-report-cancel">取消</button><button class="mfx-btn mfx-btn-primary" type="button" id="mfx-report-send">提交反馈</button></div>'
+      );
+      var rc = document.getElementById("mfx-report-cancel");
+      var rs = document.getElementById("mfx-report-send");
+      if (rc) rc.addEventListener("click", closeModal);
+      if (rs) rs.addEventListener("click", function(){
+        var detail = document.getElementById("mfx-r-detail");
+        if (!detail || !detail.value.trim()) { showToast("请填写具体情况"); return; }
+        closeModal();
+        showToast("反馈已收到，我们会尽快核实");
+      });
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById("mfx-to-top");
+  if (toTop) {
+    window.addEventListener("scroll", function(){
+      if (window.scrollY > 520) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    }, { passive: true });
+    toTop.addEventListener("click", function(){
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll("[data-count]");
+  var counted = false;
+  function runCounters(){
+    if (counted || !counters.length) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var start = null;
+      var dur = 1100;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(target * eased).toLocaleString("zh-CN");
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString("zh-CN");
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if ("IntersectionObserver" in window) {
+    var heroStats = document.querySelector(".mfx-hero-stats");
+    if (heroStats) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if (en.isIntersecting) { runCounters(); io.disconnect(); } });
+      }, { threshold: 0.3 });
+      io.observe(heroStats);
+    } else {
+      runCounters();
+    }
+  } else {
+    runCounters();
+  }
+})();
+</script>
+</body>
+  </html>
